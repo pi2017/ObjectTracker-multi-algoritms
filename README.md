@@ -1,1 +1,1 @@
-# ObjectTracker-multi-algjritms
+# ObjectTracker-multi-algoritms
