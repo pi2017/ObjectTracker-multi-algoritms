@@ -5,7 +5,7 @@ python objectdetector.py -v d:/video/DJI_0008.mpg -t csrt
 or
 python objectdetector.py -v d:/video/car_road.avi -t csrt
 or
-python objectdetector.py -v ./static/car_video.mp4 -t mosse
+python objectdetector.py -v d:/video/pena_flight.mp4 -t mosse
 or
 python objectdetector.py -v d:/video/FlightTest/Video_2020_01_23_21_31_54.mp4 -t tld
 
@@ -115,8 +115,14 @@ while True:
         initBB = cv2.selectROI("Start Tracking", frame, showCrosshair=True, fromCenter=False)
         imCrop = frame[int(initBB[1]):int(initBB[1] + initBB[3]), int(initBB[0]):int(initBB[0] + initBB[2])]
         cv2.imshow("Preview", imCrop)
+        result = cv2.imwrite(r'preview-0001.png', imCrop)
+        if result == True:
+            print('File saved')
+        else:
+            print('Error saving file')
         fps = FPS().start()
         cv2.waitKey(1)  # ESC pressed
+
 
     elif key == ord("x"):
         def crosshire():
