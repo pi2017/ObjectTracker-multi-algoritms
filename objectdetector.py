@@ -115,7 +115,8 @@ while True:
         initBB = cv2.selectROI("Start Tracking", frame, showCrosshair=True, fromCenter=False)
         imCrop = frame[int(initBB[1]):int(initBB[1] + initBB[3]), int(initBB[0]):int(initBB[0] + initBB[2])]
         cv2.imshow("Preview", imCrop)
-        result = cv2.imwrite(r'preview-0001.png', imCrop)
+        inname = time.strftime("%Y%m%d-%H%M%S")
+        result = cv2.imwrite(r'preview-' + inname + '.png', imCrop)
         if result == True:
             print('File saved')
         else:
