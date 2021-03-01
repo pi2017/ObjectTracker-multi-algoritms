@@ -1,1 +1,2 @@
-# ObjectTracker-multi-algoritms
+# ObjectTracker
+Object Tracking using Open CV
